@@ -17,3 +17,12 @@
   <artifactId>spring-boot-starter-data-jpa</artifactId>
 </dependency>
 ~~~
+
+
+## Axon Serializers
+> 기본적으로 Axon은 XStream을 사용하여 XML로 직렬화하는 XStreamSerializer 사용
+> JSON으로 직렬화하는 JacksonSerializer도 제공. 대신 클래스가 Jackson이 요구하는 규칙(구성)을 고수해야함.
+
+- `XStreamSerializer`
+- `JacksonSerializer`
+- `JavaSerializer`

@@ -5,12 +5,13 @@ spring:
     livereload:
       enabled: true
   datasource:
-#    url: jdbc:h2:mem:testdb  # DB data를 Memory에 저장. 서버를 내리면 다 날라가 버림.
-    url: jdbc:h2:file:C:/data/sample  # DB dat를 날리고 싶지 않고 local에 저장하고 싶다면 이걸 사용.
+    url: jdbc:h2:mem:testdb  # DB data를 Memory에 저장. 서버를 내리면 다 날라가 버림.
+#    url: jdbc:h2:file:C:/data/sample  # DB dat를 날리고 싶지 않고 local에 저장하고 싶다면 이걸 사용.
     driver-class-name: org.h2.Driver  # h2 Db를 쓴다는 이야기임.
     username: sa  # h2DB를 사용 시 자동으로 브라우저를 지원해 줌. 그 때 사용하는 로그인 ID
     password: # 공백이므로 비밀번호 입력하지 않고 로그B인 가능
-    initialization-mode: never # 초기화 할것인가. never, embedded, always -- embedded 값은 h2DB인 경우만 초기화 같음.
+    initialization-mode: embedded # 초기화 할것인가. never, embedded, always -- embedded 값은 h2DB인 경우만 초기화 같음.
+    platform: h2db  # platform 설정을 하게 되면 classpath에서 data-${platform}.sql 과 schema-${platform}.sql 을 찾는다. 예) data-h2db.sql, schema-h2db.sql
   jpa:
     hibernate:
       ddl-auto: create-drop  # schema.sql을 사용하기 위해서는 spring.jpa.hibernate.ddl-auto를 none으로 설정. JPA와 schema.sql을 둘다 사용할 수 없음.

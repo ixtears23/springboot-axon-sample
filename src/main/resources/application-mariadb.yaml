@@ -9,19 +9,22 @@ spring:
     url: jdbc:mysql://211.199.110.246:3380/devday
     username: root
     password: "!ibdata6450@"
-    initialization-mode: embedded
+    initialization-mode: always  # data-h2db.sql(DML) 과 schema-h2db.sql(DDL) 을 사용해서 datasocure를 초기화 시킴. jpa.hibernate.ddl-auto 는 jpa 관련 ddl만 초기화
+    data: classpath:scripts/data-${spring.datasource.platform}.sql
+    schema: classpath:scripts/schema-${spring.datasource.platform}.sql
+    platform: mariadb
   jpa:
     hibernate:
       ddl-auto: create-drop  # schema.sql을 사용하기 위해서는 spring.jpa.hibernate.ddl-auto를 none으로 설정. JPA와 schema.sql을 둘다 사용할 수 없음.
-      # create : 스키마 생성 및 이전 데이터 삭제
-      # create-drop : 세션이 끝날 때 스키마를 생성하고 삭제합니다.
+      # create : 스키마를 삭제하고 스키마를 생성
+      # create-drop : 스키마를 삭제 및 생성하고 세션이 끝날 때 스키마를 삭제합니다.
       # none : DDL 처리 비활성화
       # update : 필요한 경우 스키마 업데이트
       # validate : 스키마를 검증하고 database를 변경하지 않습니다.
+    show-sql: true
   h2:
     console:
-      enabled: false # h2 DB 브라우저 사용하겠다.
-      path: /h2-console # h2 DB 브라우저 경로
+      enabled: false
 server:
   port: 8888  # 스프링부트가 올라가는 서버 포트. 8888이 내 PC에서 사용중이라면 사용하지 않는 임의 포트 상관 없음.
 mybatis:
@@ -30,6 +33,6 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true  # 영어 그대로 camelcase
 
-#debug: true
+debug: true
 
 
