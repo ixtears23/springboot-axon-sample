@@ -26,3 +26,52 @@
 - `XStreamSerializer`
 - `JacksonSerializer`
 - `JavaSerializer`
+
+
+## SQL log
+
+
+
+### hibernate 로그
+~~~yaml
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true  # hibernate 쿼리 상세 출력
+~~~
+
+- `show-sql`은 한줄로 출력 됨.
+- `format_sql`은 상세히 출력 됨. 파라미터값은 나오지 않음.
+
+
+
+### hibernate 로그(로거로 출력됨)
+~~~yaml
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+~~~
+- 'SQL' 은 바로 위에 설명한 `show-sql` 과 `format_sql` 을 합한 것과 같고 `logger`로 출력 됨.
+- `BasicBinder` 는 파라미터 타입과 값을 출력함. 
+
+
+
+### data.sql, schema.sql 로그
+~~~yaml
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          datasource:
+            init:
+              ScriptUtils: DEBUG  # data.sql, schema.sql 쿼리 로그 레벨
+~~~
