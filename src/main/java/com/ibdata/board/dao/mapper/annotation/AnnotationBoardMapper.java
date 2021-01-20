@@ -4,12 +4,12 @@ import com.ibdata.board.dto.BoardDTO;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-public interface BoardMapper {
+public interface AnnotationBoardMapper {
 
     @Select("""
             SELECT *
               FROM BOARD
-             WHERE ID = #{id}
+             WHERE BOARD_ID = #{boardId}
             """)
-    BoardDTO findById(@Param("id") String id);
+    BoardDTO findById(@Param("boardId") String boardId);
 }

@@ -27,8 +27,8 @@ public class BoardCommandController {
     }
 
 
-    @PostMapping("/editPost")
-    public CompletableFuture editPost(@RequestBody BoardEditDTO boardEditDTO) {
+    @PostMapping("/editBoard")
+    public CompletableFuture editBoard(@RequestBody BoardEditDTO boardEditDTO) {
         return boardCommandService.editBoard(boardEditDTO);
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.example.demo.mappers")
+@MapperScan("com.ibdata.board.dao.mapper")
 public class BoardApplication implements ApplicationRunner {
 
 	public static void main(String[] args) {

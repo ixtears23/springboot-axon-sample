@@ -2,17 +2,21 @@ package com.ibdata.board.aggregates;
 
 import com.ibdata.board.commands.EditBoardCommand;
 import com.ibdata.board.commands.RegistBoardCommand;
+import com.ibdata.board.dto.BoardDTO;
 import com.ibdata.board.events.BoardEditedEvent;
 import com.ibdata.board.events.BoardRegisteredEvent;
 import org.axonframework.commandhandling.CommandHandler;
-import org.axonframework.eventhandling.EventHandler;
+import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Aggregate
+@Service
 public class BoardAggregate {
 
     public BoardAggregate() {
@@ -31,7 +35,7 @@ public class BoardAggregate {
                 LocalDate.now()));
     }
 
-    @EventHandler
+    @EventSourcingHandler
     public void on(BoardRegisteredEvent boardRegisteredEvent) {
         this.boardId = boardRegisteredEvent.getBoardId();
     }
@@ -47,7 +51,7 @@ public class BoardAggregate {
                 LocalDate.now()));
     }
 
-    @EventHandler
+    @EventSourcingHandler
     public void on(BoardEditedEvent boardEditedEvent) {
         this.boardId = boardEditedEvent.getBoardId();
     }

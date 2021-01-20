@@ -2,12 +2,28 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mappers.XMLBoardMapper">
+<mapper namespace="com.ibdata.board.dao.mapper.xml.BoardMapper">
 
-    <select id="findById" parameterType="int" resultType="boardDTO">
-        SELECT POST_ID, TITLE, CONTENTS, WRITER, PASSWORD, CREATION_DATE, DATE_OF_VERSION
+    <select id="findById" parameterType="string" resultType="boardDTO">
+        SELECT BOARD_ID, TITLE, CONTENTS, WRITER, PASSWORD, CREATION_DATE, DATE_OF_VERSION
           FROM devday.BOARD
-         WHERE POST_ID = #{postId}
+         WHERE BOARD_ID = #{boardId}
     </select>
+
+    <insert id="insertBoard" parameterType="boardDTO">
+        INSERT INTO devday.BOARD (BOARD_ID, TITLE, CONTENTS, WRITER, PASSWORD, CREATION_DATE, DATE_OF_VERSION)
+        VALUES (#{boardId}, #{title}, #{contents}, #{writer}, #{password}, #{creationDate}, #{dateOfVersion})
+    </insert>
+
+    <update id="updateBoard" parameterType="boardDTO">
+        UPDATE devday.BOARD
+        SET TITLE    = #{title},
+            CONTENTS = #{contents},
+            WRITER   = #{writer},
+            PASSWORD = #{password},
+            DATE_OF_VERSION = #{dateOfVersion}
+        WHERE BOARD_ID = #{boardId}
+    </update>
+
 
 </mapper>

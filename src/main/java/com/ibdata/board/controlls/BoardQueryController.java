@@ -28,5 +28,9 @@ public class BoardQueryController {
     public BoardDTO listForBoard(@PathVariable(value = "boardId") String boardId) {
         return boardQueryService.findBoard(boardId);
     }
+    @GetMapping("/{boardId}/annolist")
+    public BoardDTO listForAnnotationBoard(@PathVariable(value = "boardId") String boardId) {
+        return boardQueryService.findAnnotationBoard(boardId);
+    }
 
 }
