@@ -3,9 +3,8 @@ package com.ibdata.board.dto;
 import lombok.Value;
 
 @Value
-public class PostCommandDTO {
+public class BoardRegistDTO {
 
-    private String postId;
     private String title;
     private String contents;
     private String writer;

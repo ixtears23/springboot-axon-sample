@@ -1,16 +1,18 @@
 package com.ibdata.board.events;
 
 import lombok.AllArgsConstructor;
+import lombok.Value;
 
 import java.time.LocalDate;
 
 @AllArgsConstructor
-public class PostDeletedEvent {
+@Value
+public class BoardRegisteredEvent {
 
-    private String postId;
+    private String boardId;
     private String title;
     private String contents;
     private String writer;
     private String password;
-    private LocalDate dateOfVersion;
+    private LocalDate creationDate;
 }

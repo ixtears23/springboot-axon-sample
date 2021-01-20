@@ -6,12 +6,12 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @AllArgsConstructor
 @Getter
-public class RegistrationPostCommand {
+public class EditBoardCommand {
 
     @TargetAggregateIdentifier
-    private String postId;
+    private String boardId;
     private String title;
     private String contents;
-    private String writer;
     private String password;
+    private String writer;
 }

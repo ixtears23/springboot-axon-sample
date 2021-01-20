@@ -5,10 +5,9 @@
 <mapper namespace="com.example.demo.mappers.XMLBoardMapper">
 
     <select id="findById" parameterType="int" resultType="boardDTO">
-        SELECT ID
-             , CONTENT
-          FROM BOARD
-         WHERE ID = #{id}
+        SELECT POST_ID, TITLE, CONTENTS, WRITER, PASSWORD, CREATION_DATE, DATE_OF_VERSION
+          FROM devday.BOARD
+         WHERE POST_ID = #{postId}
     </select>
 
 </mapper>

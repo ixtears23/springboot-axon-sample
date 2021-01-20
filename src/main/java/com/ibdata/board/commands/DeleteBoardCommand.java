@@ -6,11 +6,9 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @AllArgsConstructor
 @Getter
-public class EditPostCommand {
+public class DeleteBoardCommand {
 
     @TargetAggregateIdentifier
-    private String postId;
-    private String title;
-    private String contents;
+    private String boardId;
     private String password;
 }
