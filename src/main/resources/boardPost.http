@@ -1,0 +1,11 @@
+### Send request with dynamic variables in request's body
+POST http://localhost:8888/boardPost/registrationPost
+Content-Type: application/json
+
+{
+  "postId": "postId",
+  "title": "title",
+  "contents": "contents",
+  "writer": "writer",
+  "password": "password"
+}

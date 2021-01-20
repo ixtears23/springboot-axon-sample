@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings
+        xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+        http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+        version="2.0">
+
+    <!-- Axon needs these tables -->
+
+    <schema>axon</schema>
+    <entity class="org.axonframework.eventsourcing.eventstore.jpa.DomainEventEntry"/>
+<!--    <entity class="org.axonframework.eventsourcing.eventstore.jpa.SnapshotEventEntry"/>-->
+    <entity class="org.axonframework.modelling.saga.repository.jpa.AssociationValueEntry"/>
+    <entity class="org.axonframework.eventhandling.tokenstore.jpa.TokenEntry"/>
+    <entity class="org.axonframework.modelling.saga.repository.jpa.SagaEntry"/>
+
+</entity-mappings>
