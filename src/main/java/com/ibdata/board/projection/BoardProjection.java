@@ -6,6 +6,8 @@ import com.ibdata.board.events.BoardEditedEvent;
 import com.ibdata.board.events.BoardRegisteredEvent;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.eventhandling.EventHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -15,10 +17,7 @@ import java.time.LocalDateTime;
 public class BoardProjection {
 
     private final BoardMapper boardMapper;
-
-//    public BoardProjection(BoardMapper boardMapper) {
-//        this.boardMapper = boardMapper;
-//    }
+    private static final Logger log = LoggerFactory.getLogger(BoardProjection.class);
 
     @EventHandler
     public void on(BoardRegisteredEvent boardRegisteredEvent) {

@@ -1,7 +1,22 @@
 # board
+> AxonFramework 및 향후 표준 프로젝트 구성을 위한 프로토타입 및 샘플
 
+## 실행방법
+### mariadb 환경
+- profile = mariadb
 
+### h2 database 환경
+- profile = h2db
 
+---
+
+## H2 Database Engine
+> Java로 작성된 관계형 데이터베이스 관리 시스템  
+> Java SQL 데이터베이스
+- 매우 빠른 오픈 소스 JDBC API
+- Embedded 및 server 모드; in-memory database
+- 브라우저 기반 콘솔 애플리케이션
+- 작은 설치 공간 : 약 2MB의 jar 파일 크기
 
 ## Axon Table 관련 정보 위치
 - `src/main/resources/META-INF/orm.xml`
@@ -20,7 +35,7 @@
 
 
 ## Axon Serializers
-> 기본적으로 Axon은 XStream을 사용하여 XML로 직렬화하는 XStreamSerializer 사용
+> 기본적으로 Axon은 XStream을 사용하여 XML로 직렬화하는 XStreamSerializer 사용  
 > JSON으로 직렬화하는 JacksonSerializer도 제공. 대신 클래스가 Jackson이 요구하는 규칙(구성)을 고수해야함.
 
 - `XStreamSerializer`
@@ -29,8 +44,6 @@
 
 
 ## SQL log
-
-
 
 ### hibernate 로그
 ~~~yaml
@@ -45,8 +58,6 @@ spring:
 - `show-sql`은 한줄로 출력 됨.
 - `format_sql`은 상세히 출력 됨. 파라미터값은 나오지 않음.
 
-
-
 ### hibernate 로그(로거로 출력됨)
 ~~~yaml
 logging:
@@ -59,8 +70,9 @@ logging:
             sql:
               BasicBinder: TRACE
 ~~~
-- 'SQL' 은 바로 위에 설명한 `show-sql` 과 `format_sql` 을 합한 것과 같고 `logger`로 출력 됨.
-- `BasicBinder` 는 파라미터 타입과 값을 출력함. 
+- `SQL` 은 바로 위에 설명한 `show-sql` 과 동일. `logger`로 출력 됨.  
+  바로 위에 설명한 `format_sql` 설정을 해주지 않으면 `logger`도 한줄로 출력 됨.
+- `BasicBinder`는 파라미터 타입과 값을 출력함. 
 
 
 

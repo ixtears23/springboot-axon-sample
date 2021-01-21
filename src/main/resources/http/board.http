@@ -13,6 +13,7 @@ Content-Type: application/json
 POST http://localhost:8888/board/editBoard
 Content-Type: application/json
 
+
 {
   "boardId": "e0efc6a5-dbc8-4064-9477-19c198c66495",
   "title": "AxonFramework 구성(수정)",

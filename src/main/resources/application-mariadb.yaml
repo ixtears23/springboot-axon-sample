@@ -44,6 +44,9 @@ axon:
 
 logging:
   level:
+    com:
+      ibdata:
+        board: DEBUG
     org:
       hibernate:
         SQL: DEBUG
