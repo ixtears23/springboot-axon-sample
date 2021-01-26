@@ -5,6 +5,7 @@ import com.ibdata.board.dao.mapper.xml.BoardMapper;
 import com.ibdata.board.dto.BoardDTO;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
+import org.axonframework.queryhandling.QueryGateway;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,11 +15,13 @@ import java.util.stream.Collectors;
 public class BoardQueryService {
 
     private final EventStore eventStore;
+    private final QueryGateway queryGateway;    // 어떻게 사용하는 녀석인가..
     private final BoardMapper boardMapperXML;
     private final AnnotationBoardMapper annotationBoardMapper;
 
-    public BoardQueryService(EventStore eventStore, BoardMapper boardMapperXML, AnnotationBoardMapper annotationBoardMapper) {
+    public BoardQueryService(EventStore eventStore, QueryGateway queryGateway, BoardMapper boardMapperXML, AnnotationBoardMapper annotationBoardMapper) {
         this.eventStore = eventStore;
+        this.queryGateway = queryGateway;
         this.boardMapperXML = boardMapperXML;
         this.annotationBoardMapper = annotationBoardMapper;
     }

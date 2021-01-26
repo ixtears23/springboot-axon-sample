@@ -24,11 +24,11 @@ public class BoardQueryController {
         return boardQueryService.listEventsForAccount(boardId);
     }
 
-    @GetMapping("/{boardId}/list")
+    @GetMapping("/{boardId}/xml")
     public BoardDTO listForBoard(@PathVariable(value = "boardId") String boardId) {
         return boardQueryService.findBoard(boardId);
     }
-    @GetMapping("/{boardId}/annolist")
+    @GetMapping("/{boardId}/annotation")
     public BoardDTO listForAnnotationBoard(@PathVariable(value = "boardId") String boardId) {
         return boardQueryService.findAnnotationBoard(boardId);
     }

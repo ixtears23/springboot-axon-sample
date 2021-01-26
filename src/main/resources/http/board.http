@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
   "title": "Axon프레임워크 구성",
-  "contents": "자료가 턱 없이 부족하고 거의 대부분이 영문 자료 뿐이다..",
+  "contents": "안녕하세요.",
   "writer": "오준석",
   "password": "123456789ABCDEFG"
 }
@@ -15,11 +15,11 @@ Content-Type: application/json
 
 
 {
-  "boardId": "e0efc6a5-dbc8-4064-9477-19c198c66495",
-  "title": "AxonFramework 구성(수정)",
-  "contents": "조금씩 조금씩 하나씩 시간이 부족하군..",
+  "boardId": "3ae7684c-db3d-4611-85b2-ae8abe9eb934",
+  "title": "AxonFramewo3drk 구성(수정)",
+  "contents": "반갑습니다.",
   "writer": "연구개발팀장",
-  "password": "ABCDEFG123456789"
+  "password": "ABCDEF234456789"
 }
 
 ### 등록된 게시물 이벤트 히스토리 조회
@@ -27,9 +27,9 @@ GET http://localhost:8888/board/{{boardId}}/events
 Content-Type: application/json
 
 ### 등록된 게시물 조회
-GET http://localhost:8888/board/{{boardId}}/list
+GET http://localhost:8888/board/{{boardId}}/xml
 Content-Type: application/json
 
 ### 등록된 게시물 조회
-GET http://localhost:8888/board/{{boardId}}/annolist
+GET http://localhost:8888/board/{{boardId}}/annotation
 Content-Type: application/json
