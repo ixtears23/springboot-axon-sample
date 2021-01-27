@@ -67,7 +67,7 @@ public class BoardAggregate {
         this.boardId = boardEditedEvent.getBoardId();
     }
 
-    // TODO 안탐...
+    // TODO `@CommandHandlerInterceptor` 안탐...
     @CommandHandlerInterceptor
     public void intercept(RegistBoardCommand command, InterceptorChain interceptorChain) throws Exception {
         logger.debug("==============@CommandHandlerInterceptor==============");

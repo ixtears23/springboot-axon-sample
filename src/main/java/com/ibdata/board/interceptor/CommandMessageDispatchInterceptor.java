@@ -16,6 +16,7 @@ public class CommandMessageDispatchInterceptor implements MessageDispatchInterce
         return message;
     }
 
+    // TODO 해당 메서드는 동작하지 않음. 왜 동작하지 않는지 해결해야 함.
     @Override
     public BiFunction<Integer, CommandMessage<?>, CommandMessage<?>> handle(List<? extends CommandMessage<?>> messages) {
         log.debug("==========MyCommandDispatchInterceptor:BiFunction");

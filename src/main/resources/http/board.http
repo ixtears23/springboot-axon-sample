@@ -15,10 +15,10 @@ Content-Type: application/json
 
 
 {
-  "boardId": "3ae7684c-db3d-4611-85b2-ae8abe9eb934",
+  "boardId": "1602a7cb-a8ae-4244-a2d5-8c4bde61dff4",
   "title": "AxonFramewo3drk 구성(수정)",
   "contents": "반갑습니다.",
-  "writer": "연구개발팀장",
+  "writer": "연구개발팀s장",
   "password": "ABCDEF234456789"
 }
 
