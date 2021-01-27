@@ -26,6 +26,31 @@ public class BoardProjection {
     private final BoardMapper boardMapper;
     private static final Logger log = LoggerFactory.getLogger(BoardProjection.class);
 
+    /*
+        성공!!!
+        @EventSourcingHandler
+        -> @MessageHandlerInterceptor
+        -> @EventHandler
+     */
+    @MessageHandlerInterceptor
+    public void interceptor(Message<?> message) {
+        log.debug("============BoardProjection.interceptor()============");
+        log.debug("================identifier================");
+        log.debug(message.getIdentifier());
+        log.debug("================payload================");
+//        log.debug(message.getPayload());
+        log.debug("================payloadType================");
+//        Class<String> payloadType = message.getPayloadType();
+//        log.debug(payloadType.getName());
+
+        log.debug("================decalreFiedls================");
+//        Field[] declaredFields = payloadType.getDeclaredFields();
+//        Arrays.stream(declaredFields).forEach(field -> log.debug(field.getName()));
+
+        log.debug("================simpleName================");
+//        log.debug(payloadType.getSimpleName());
+    }
+
     @EventHandler
     public void on(BoardRegisteredEvent boardRegisteredEvent) {
         log.debug("============BoardProjection:BoardRegisteredEvent============");
@@ -50,30 +75,5 @@ public class BoardProjection {
                 boardEditedEvent.getPassword(),
                 null,
                 LocalDateTime.now()));
-    }
-
-    /*
-        성공!!!
-        @EventSourcingHandler
-        -> @MessageHandlerInterceptor
-        -> @EventHandler
-     */
-    @MessageHandlerInterceptor
-    public void interceptor(Message<?> message) {
-        log.debug("============BoardProjection.interceptor()============");
-        log.debug("================identifier================");
-        log.debug(message.getIdentifier());
-        log.debug("================payload================");
-//        log.debug(message.getPayload());
-        log.debug("================payloadType================");
-//        Class<String> payloadType = message.getPayloadType();
-//        log.debug(payloadType.getName());
-
-        log.debug("================decalreFiedls================");
-//        Field[] declaredFields = payloadType.getDeclaredFields();
-//        Arrays.stream(declaredFields).forEach(field -> log.debug(field.getName()));
-
-        log.debug("================simpleName================");
-//        log.debug(payloadType.getSimpleName());
     }
 }

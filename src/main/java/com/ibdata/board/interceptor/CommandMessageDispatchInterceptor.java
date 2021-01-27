@@ -7,10 +7,8 @@ import org.axonframework.messaging.MessageDispatchInterceptor;
 import java.util.List;
 import java.util.function.BiFunction;
 
-
-// TODO 안탐...
 @Slf4j
-public class MyCommandDispatchInterceptor implements MessageDispatchInterceptor<CommandMessage<?>> {
+public class CommandMessageDispatchInterceptor implements MessageDispatchInterceptor<CommandMessage<?>> {
 
     @Override
     public CommandMessage<?> handle(CommandMessage<?> message) {
@@ -20,8 +18,8 @@ public class MyCommandDispatchInterceptor implements MessageDispatchInterceptor<
 
     @Override
     public BiFunction<Integer, CommandMessage<?>, CommandMessage<?>> handle(List<? extends CommandMessage<?>> messages) {
+        log.debug("==========MyCommandDispatchInterceptor:BiFunction");
         return (integer, commandMessage) -> {
-            log.debug("==========MyCommandDispatchInterceptor:BiFunction");
             return commandMessage;
         };
     }

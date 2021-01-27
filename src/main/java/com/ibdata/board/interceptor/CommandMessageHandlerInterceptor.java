@@ -5,10 +5,10 @@ import org.axonframework.messaging.InterceptorChain;
 import org.axonframework.messaging.MessageHandlerInterceptor;
 import org.axonframework.messaging.unitofwork.UnitOfWork;
 
-// TODO 안탐...
-public class MyCommandHandlerInterceptor implements MessageHandlerInterceptor<CommandMessage<?>> {
+public class CommandMessageHandlerInterceptor implements MessageHandlerInterceptor<CommandMessage<?>> {
     @Override
     public Object handle(UnitOfWork<? extends CommandMessage<?>> unitOfWork, InterceptorChain interceptorChain) throws Exception {
+//        return interceptorChain.proceed();
         return null;
     }
 }
