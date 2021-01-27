@@ -1,5 +1,6 @@
 package com.ibdata.board.aggregates;
 
+import com.ibdata.board.aggregates.member.CommentMember;
 import com.ibdata.board.commands.EditBoardCommand;
 import com.ibdata.board.commands.RegistBoardCommand;
 import com.ibdata.board.dao.mapper.xml.BoardMapper;
@@ -10,14 +11,17 @@ import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.messaging.InterceptorChain;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
+import org.axonframework.modelling.command.AggregateMember;
 import org.axonframework.modelling.command.CommandHandlerInterceptor;
 import org.axonframework.spring.stereotype.Aggregate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-@Aggregate
+@Aggregate(snapshotTriggerDefinition = "boardSnapshotTrigger")
 public class BoardAggregate {
 
     private static final Logger logger = LoggerFactory.getLogger(BoardAggregate.class);
@@ -28,6 +32,9 @@ public class BoardAggregate {
 
     @AggregateIdentifier
     private String boardId;
+
+    @AggregateMember
+    private List<CommentMember> commentMemberList = new ArrayList<>();
 
     @CommandHandler
     public BoardAggregate(RegistBoardCommand registBoardCommand, BoardMapper boardMapper) {
