@@ -3,7 +3,7 @@ package com.ibdata.board.dto;
 import lombok.Value;
 
 @Value
-public class BoardEditDTO {
+public class BoardChangeDTO {
 
     private String boardId;
     private String title;

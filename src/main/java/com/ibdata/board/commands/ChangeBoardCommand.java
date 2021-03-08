@@ -6,7 +6,7 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @AllArgsConstructor
 @Getter
-public class EditBoardCommand {
+public class ChangeBoardCommand {
 
     @TargetAggregateIdentifier
     private String boardId;

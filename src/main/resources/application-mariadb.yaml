@@ -47,13 +47,13 @@ logging:
     com:
       ibdata:
         board: DEBUG
-    org:
-      hibernate:
-        SQL: DEBUG
-        type:
-          descriptor:
-            sql:
-              BasicBinder: TRACE
+#    org:
+#      hibernate:
+#        SQL: DEBUG
+#        type:
+#          descriptor:
+#            sql:
+#              BasicBinder: DEBUG
       springframework:
         jdbc:
           datasource:

@@ -1,25 +1,42 @@
 ### 게시물 등록
-POST http://localhost:8888/board/registBoard
+POST http://localhost:8888/board/regist
 Content-Type: application/json
 
 {
   "title": "Axon프레임워크 구성",
   "contents": "안녕하세요.",
   "writer": "오준석",
-  "password": "123456789ABCDEFG"
+  "password": "123456789ABCDEFG",
+  "amount": 30
 }
 
 ### 게시물 수정
-POST http://localhost:8888/board/editBoard
+POST http://localhost:8888/board/edit
 Content-Type: application/json
 
 
 {
-  "boardId": "1602a7cb-a8ae-4244-a2d5-8c4bde61dff4",
+  "boardId": "dc25eb23-7875-4034-abd0-f8d174b950d9",
   "title": "AxonFramewo3drk 구성(수정)",
   "contents": "반갑습니다.",
   "writer": "연구개발팀s장",
-  "password": "ABCDEF234456789"
+  "password": "ABCDEF234456789",
+  "amount": 15
+}
+
+
+### 게시물 변경
+POST http://localhost:8888/board/change
+Content-Type: application/json
+
+
+{
+  "boardId": "dc25eb23-7875-4034-abd0-f8d174b950d9",
+  "title": "AxonFramewo3drk 구성(수정)",
+  "contents": "반갑습니다 변경.",
+  "writer": "연구개발팀s장",
+  "password": "ABCDEF234456789",
+  "amount": 5
 }
 
 ### 등록된 게시물 이벤트 히스토리 조회

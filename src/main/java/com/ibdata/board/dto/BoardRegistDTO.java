@@ -9,4 +9,5 @@ public class BoardRegistDTO {
     private String contents;
     private String writer;
     private String password;
+    private int amount;
 }

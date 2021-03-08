@@ -15,4 +15,5 @@ public class BoardRegisteredEvent {
     private String writer;
     private String password;
     private LocalDate creationDate;
+    private int amount;
 }

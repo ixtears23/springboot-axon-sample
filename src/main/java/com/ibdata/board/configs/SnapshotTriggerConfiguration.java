@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-@Configuration
+//@Configuration
 public class SnapshotTriggerConfiguration {
 
 /*
@@ -35,7 +35,7 @@ public class SnapshotTriggerConfiguration {
          snapshot_event_entry Table에 threshold 숫자만큼 Event 발생 시 데이터 생성됨.<br>
          snapshot data를 생성하고 난 뒤로는 Event 발생 시 계속해서오류 발생
      */
-    @Bean(name = "boardSnapshotTrigger")
+//    @Bean(name = "boardSnapshotTrigger")
     public SnapshotTriggerDefinition boardSnapshotTrigger(Snapshotter snapshotter) {
 
         return new EventCountSnapshotTriggerDefinition(snapshotter, 8);

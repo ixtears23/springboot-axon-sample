@@ -15,4 +15,5 @@ public class BoardEditedEvent {
     private String writer;
     private String password;
     private LocalDate dateOfVersion;
+    private int amount;
 }
